@@ -335,7 +335,6 @@ with col_logos_center:
     ttgreenfoods_logo_url = "https://drive.google.com/uc?id=1uIQZQywjuQJz6Eokkj6dNSpBroJ8tQf8"
 
     try:
-        # Load Sustrend and TT Green Foods logos
         sustrend_response = requests.get(sustrend_logo_url)
         sustrend_response.raise_for_status()
         sustrend_image = Image.open(BytesIO(sustrend_response.content))
@@ -344,32 +343,7 @@ with col_logos_center:
         ttgreenfoods_response.raise_for_status()
         ttgreenfoods_image = Image.open(BytesIO(ttgreenfoods_response.content))
 
-        # Load additional logos
-        creas_response = requests.get(creas_logo_url)
-        creas_response.raise_for_status()
-        creas_image = Image.open(BytesIO(creas_response.content))
-
-        corfo_response = requests.get(corfo_logo_url)
-        corfo_response.raise_for_status()
-        corfo_image = Image.open(BytesIO(corfo_response.content))
-        
-        ciisa_response = requests.get(ciisa_logo_url)
-        ciisa_response.raise_for_status()
-        ciisa_image = Image.open(BytesIO(ciisa_response.content))
-
-        # Display logos in a row
-        logo_cols = st.columns(5) # Adjust number of columns based on how many logos you have
-        with logo_cols[0]:
-            st.image(sustrend_image, width=80)
-        with logo_cols[1]:
-            st.image(ttgreenfoods_image, width=80)
-        with logo_cols[2]:
-            st.image(creas_image, width=80)
-        with logo_cols[3]:
-            st.image(corfo_image, width=80)
-        with logo_cols[4]:
-            st.image(ciisa_image, width=80)
-
+        st.image([sustrend_image, ttgreenfoods_image], width=100)
     except requests.exceptions.RequestException as e:
         st.error(f"Error al cargar los logos desde las URLs. Por favor, verifica los enlaces: {e}")
     except Exception as e:
@@ -378,5 +352,5 @@ with col_logos_center:
 st.markdown("<div style='text-align: center; font-size: small; color: gray;'>Viña del Mar, Valparaíso, Chile</div>", unsafe_allow_html=True)
 
 st.sidebar.markdown("---")
-st.sidebar.markdown(f"<div style='text-align: center; font-size: smaller; color: gray;'>Versión del Visualizador: 1.0 (Proyecto P2.1)</div>", unsafe_allow_html=True)
+st.sidebar.markdown(f"<div style='text-align: center; font-size: smaller; color: gray;'>Versión del Visualizador: 1.8</div>", unsafe_allow_html=True) # Actualizada la versión
 st.sidebar.markdown(f"<div style='text-align: center; font-size: x-small; color: lightgray;'>Desarrollado con Streamlit</div>", unsafe_allow_html=True)

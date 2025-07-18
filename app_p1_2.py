@@ -333,11 +333,6 @@ col_logos_left, col_logos_center, col_logos_right = st.columns([1, 2, 1])
 with col_logos_center:
     sustrend_logo_url = "https://drive.google.com/uc?id=1vx_znPU2VfdkzeDtl91dlpw_p9mmu4dd"
     ttgreenfoods_logo_url = "https://drive.google.com/uc?id=1uIQZQywjuQJz6Eokkj6dNSpBroJ8tQf8"
-    
-    # Add other logos here if needed, following the same pattern
-    creas_logo_url = "https://www.creas.cl/wp-content/uploads/2023/11/logo-CREAS-png.png"
-    corfo_logo_url = "https://www.corfo.cl/assets/rebranding/logo_corfo_dark.svg"
-    ciisa_logo_url = "https://ciisa.cl/wp-content/uploads/2022/03/Logo_CIISA_2022.png"
 
     try:
         # Load Sustrend and TT Green Foods logos
